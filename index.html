@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>EPAM React TODO List</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap"></div>
+
+<script type="text/babel">
+    const app = document.getElementById("wrap");
+    class Button extends React.Component{
+        render(){
+            return <button class={this.props.class}>{this.props.placeholder}</button>
+        }
+    }
+
+    class Search extends React.Component {
+        render(){
+            return <input placeholder={this.props.placeholder} type="text"/>;
+        }
+    }
+
+    ReactDOM.render(
+        <div>
+            <Search placeholder="Search"/>
+            <Button placeholder="OK"/>
+            <Button class="sideBtn" placeholder="Add TODO"/>
+        </div>,
+        app);
+</script>
+
+</body>
+</html>
